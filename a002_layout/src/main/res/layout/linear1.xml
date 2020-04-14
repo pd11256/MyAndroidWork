@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ACD4D1"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:text="첫번째 TextView"
+        android:textColor="#009688"
+        android:textSize="36sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="버튼 A"
+        android:layout_margin="20dp"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:padding="10dp"
+        android:text="TextView"
+        android:textColor="#BECF1F" />
+</LinearLayout>
+
+
+<!--        android:padding="10dp" 큰배경안에 작은 텍스트부분만 즉 내부 텍스트영역-->
+<!--기본구성임         android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"/ 이걸하면 문법오류 사라짐 -->
+<!--각각의 text간의 android:layout_margin 여백,공간  바깥쪽 영역-->
