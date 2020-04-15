@@ -91,8 +91,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String msg = String.format("%s 버튼 %s 이 클릭[%s]", name, text, tag);
                 Log.d("myapp", msg);
                 tvResult.setText(msg);
-                et.setText(et.getText().append(name));//기존의 텍스트에 name append
-
+                et.setText(et.getText().append(name));//기존의 텍스트에 name appen
             }
         }
         btnA.setOnClickListener(new MyListener("안녕1"));
