@@ -94,7 +94,7 @@ public class Main3Activity extends AppCompatActivity {
                 cal1 = et.getText().toString();
                 symbol = (String)((Button)v).getText();
                 et.setText("");
-                Log.d("listener", cal1);
+                Log.d("listener", cal1);// logcat에 어떻게출력되는지 나오게하는것 즉 ,에러확인이나 디버깅확인을위해!!!
             }
         }
         //symbol 연산 , cal1 = num1 , cal2 = num2
