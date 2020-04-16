@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Main2Activity">
+        <activity android:name=".Main3Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,14 +17,15 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".Main2Activity">
 
+        </activity>
 
+        <activity
+            android:name=".MainActivity">
 
         </activity>
     </application>
 
 </manifest>
-
-
-<!--<intent-filter> 이걸오려서, Main2에넣어주면 메인화면이된다  </intent-filter>-->

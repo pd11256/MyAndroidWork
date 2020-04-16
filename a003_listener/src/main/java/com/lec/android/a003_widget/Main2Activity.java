@@ -13,6 +13,7 @@ public class Main2Activity extends AppCompatActivity {
     int temp;
     int result;
     boolean flag=true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
