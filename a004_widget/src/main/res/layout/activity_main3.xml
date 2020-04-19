@@ -34,7 +34,7 @@
         android:text="키위"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
     <CheckBox
-        android:id="@+id/cb4    "
+        android:id="@+id/cb4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="바나나"
@@ -42,7 +42,6 @@
 
     <Button
         android:id="@+id/btnComplete"
-        style="@"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="선택완료" />

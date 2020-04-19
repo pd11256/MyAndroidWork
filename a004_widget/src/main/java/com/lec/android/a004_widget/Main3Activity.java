@@ -23,7 +23,7 @@ public class Main3Activity extends AppCompatActivity {
         cb1 = findViewById(R.id.cb1);
         cb2 = findViewById(R.id.cb2);
         cb3 = findViewById(R.id.cb3);
-        //cb4 = findViewById(R.id.cb4); 자꾸오류남
+        cb4 = findViewById(R.id.cb4);
 
         tvResult = findViewById(R.id.tvResult);
 
@@ -53,9 +53,9 @@ public class Main3Activity extends AppCompatActivity {
 
     //두가지중 COmpoindbutton 잘고르기
     class CbListener implements CompoundButton.OnCheckedChangeListener{
-        //Alt + insert 하면 오버라이드 선택할수있음
-        //CheckBox 의 '상태'가 변할때마다 호출되는 메소드
-        //isChecked : true <-check 상태, false <-uncheck 상태
+//        Alt + insert 하면 오버라이드 선택할수있음
+//        CheckBox 의 '상태'가 변할때마다 호출되는 메소드
+//        isChecked : true <-check 상태, false <-uncheck 상태
         @Override
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
             int count = 0;

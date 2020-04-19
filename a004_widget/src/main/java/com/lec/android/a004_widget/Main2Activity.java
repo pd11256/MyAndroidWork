@@ -147,12 +147,12 @@ public class Main2Activity extends AppCompatActivity {
                     view.setBackgroundColor(Color.parseColor("#00000000"));
                 }
             }
-        });
+        }); //굳이필요없어
 
         op1.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             // 타이핑 완료 되었을때 호출되는 메소드
             @Override
-            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+            public boolean onEditorAction(TextView textView,int i, KeyEvent keyEvent) {
                 tvResult.setText("첫번째 숫자 입력완료");
                 return false;
             }
