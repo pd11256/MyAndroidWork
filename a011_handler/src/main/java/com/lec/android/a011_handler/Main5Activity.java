@@ -42,8 +42,8 @@ public class Main5Activity extends AppCompatActivity {
 //      Result : onPostExecute 에서 사용할 변수의 타입
     class Backgroundtask extends AsyncTask<Integer,Integer,Integer>{
 
-
         //백그라운드 작업. 시작하기 전에 호출
+
 
         @Override
         protected void onPreExecute() {
@@ -84,8 +84,6 @@ public class Main5Activity extends AppCompatActivity {
 
 
 
-
-
         //doInBackground() 완료되면 호출
         @Override
         protected void onPostExecute(Integer integer) { //doInBackground 에서 return한 값을 매개변수로받는다
@@ -96,11 +94,10 @@ public class Main5Activity extends AppCompatActivity {
         }
     }//end AsyncTask
 
-public void mOnClick(View v){
+    public void mOnClick(View v){
         mainValue++;
         tvMainValue.setText("MainValue: "+mainValue);
-}
-
+    }
 
 
 }//end class

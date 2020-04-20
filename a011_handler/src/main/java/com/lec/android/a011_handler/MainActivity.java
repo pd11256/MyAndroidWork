@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
     //1. Thread 를 상속받은 작업스레드
     class BackThread extends Thread{
-        @Override
+            @Override
         public void run() {
             while (true){
                 backValue1++; // 작업스레드 값 증가

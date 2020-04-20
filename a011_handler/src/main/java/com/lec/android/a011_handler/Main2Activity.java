@@ -158,7 +158,6 @@ public class Main2Activity extends AppCompatActivity {
 // 가령 아래와 같이 메인스레드의 핸들러를 직접 사용할수 없는 분리된 작업 스레드
 
 
-
 //메인은 위에다가해주어야함
 class BackThread3 extends Thread{  //작업스레드
     int backValue = 0;

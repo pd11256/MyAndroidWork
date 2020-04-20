@@ -17,11 +17,11 @@ public class MainActivity extends AppCompatActivity {
 
     //대화상자 객체
     Dialog dlg1;
-    ImageView ivDlgBanner;
-    Button btnDlgEvent;
+    ImageView ivDlgBanner;  //layout11 에있는 이미지뷰어
+    Button btnDlgEvent; //layout11 에있는 이벤트처리버튼
 
     Dialog dlg2;
-    TextView tvResult;
+    TextView tvResult; //main의 결과창
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
         dlg1.setContentView(R.layout.dialog_layout11); // 다이얼로그 화면 등록
 
         //Dialog 안의 view 객체들 얻어오기
-        ivDlgBanner =dlg1.findViewById(R.id.ivDlgBanner);
-        btnDlgEvent =dlg1.findViewById(R.id.btnDlgEvent);
+        ivDlgBanner =dlg1.findViewById(R.id.ivDlgBanner);//*****
+        btnDlgEvent =dlg1.findViewById(R.id.btnDlgEvent);//*****
 
         //TODO
         btnDlgEvent.setOnClickListener(new View.OnClickListener() {
@@ -53,12 +53,16 @@ public class MainActivity extends AppCompatActivity {
                                 //종료할 것인지 여부 ,True:종료됨, False : 종료안됨.
 
         // #2
-        dlg2 =new Dialog(this);
-        dlg2.setContentView(R.layout.dialog_layout12);
+        dlg2 =new Dialog(this); //*****
+        dlg2.setContentView(R.layout.dialog_layout12);//*****
+
+        //Activity 에 Dialog등록하기
         dlg2.setOwnerActivity(MainActivity.this);
         dlg2.setCanceledOnTouchOutside(true);
 
-       final EditText etName =dlg2.findViewById(R.id.etName);
+
+
+       final EditText etName =dlg2.findViewById(R.id.etName); //final 생각하기
         Button btnOk =dlg2.findViewById(R.id.btnOk);
         Button btnCancel =dlg2.findViewById(R.id.btnCancel);
 
