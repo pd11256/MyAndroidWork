@@ -2,9 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -17,8 +17,6 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-
 
 
             <TextView
@@ -41,7 +39,6 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
 
-
             <TextView
                 android:id="@+id/tv2"
                 android:layout_width="wrap_content"
@@ -51,6 +48,7 @@
                 android:text="나이 :"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
             <TextView
                 android:id="@+id/tvAge"
                 android:layout_width="wrap_content"
@@ -59,7 +57,6 @@
                 android:layout_marginTop="64dp"
                 app:layout_constraintStart_toEndOf="@+id/tv2"
                 app:layout_constraintTop_toTopOf="parent" />
-
 
 
             <TextView
@@ -71,6 +68,7 @@
                 android:text="주소 :"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv2" />
+
             <TextView
                 android:id="@+id/tvAddress"
                 android:layout_width="wrap_content"
@@ -79,9 +77,6 @@
                 android:layout_marginTop="20dp"
                 app:layout_constraintStart_toEndOf="@+id/tv3"
                 app:layout_constraintTop_toBottomOf="@+id/tvAge" />
-
-
-
 
 
             <ImageButton

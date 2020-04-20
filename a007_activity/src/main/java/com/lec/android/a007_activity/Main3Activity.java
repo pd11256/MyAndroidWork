@@ -32,10 +32,10 @@ public class Main3Activity extends AppCompatActivity {
         tvResult = findViewById(R.id.tvResult);
 
         btnStart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int a = Integer.parseInt(et1.getText().toString());
-                int b = Integer.parseInt(et2.getText().toString());
+                    @Override
+                    public void onClick(View v) {
+                        int a = Integer.parseInt(et1.getText().toString());
+                        int b = Integer.parseInt(et2.getText().toString());
 
 
                 Intent intent = new Intent(getApplicationContext(), CalcActivity.class);
