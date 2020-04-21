@@ -124,11 +124,10 @@ public class Main2Activity extends AppCompatActivity {
             case DIALOG_RADIO:
                 //커스텀 스타일 적용
                 AlertDialog.Builder builder3
-                        =new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.AlertDialogCustom));
+                        =new AlertDialog.Builder(this);//원래new ContextThemeWrapper(this, R.style.AlertDialogCustom)
                 final String str2[]={"빨강","녹색","파랑"};
                 builder3.setTitle("색을 고르세오")
                         .setPositiveButton("선택완료", new DialogInterface.OnClickListener() {
-                            //
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 Toast.makeText(getApplicationContext(),str2[choice]+"을 선택",Toast.LENGTH_SHORT).show();
@@ -154,7 +153,7 @@ public class Main2Activity extends AppCompatActivity {
                 AlertDialog.Builder builder4
                         =new AlertDialog.Builder(this);
                 final String [] data = {"한국","북한","쏘련","영국"};
-                final boolean[] checked = {true , false ,true ,false};
+                final boolean[] checked = {false , false ,false ,false};
 
                 builder4.setTitle("MultiChoice 다이얼로그 제목")
                         .setPositiveButton("선택완료", new DialogInterface.OnClickListener() {
