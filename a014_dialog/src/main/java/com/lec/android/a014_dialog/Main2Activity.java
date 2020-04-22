@@ -23,7 +23,7 @@ public class Main2Activity extends AppCompatActivity {
 
     int choice = -1; // 라디오 버튼 선택값
 
-
+       //깃연습!!
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
