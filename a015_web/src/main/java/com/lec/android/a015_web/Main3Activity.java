@@ -31,6 +31,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -58,11 +61,11 @@ public class Main3Activity extends AppCompatActivity {
     Button btnJSOn;
     Button btnParse;
     EditText et;
-    TextView tv;
+    static TextView tv;
     StringBuffer sb;
-    String str= "";
-
-    Handler handler = new Handler();
+    static String str= "";
+    int ex ;
+    static Handler handler = new Handler();
 
 
     @Override
@@ -85,6 +88,7 @@ public class Main3Activity extends AppCompatActivity {
             public void onClick(View v) {
 
                 try {final String urlStr;
+                    ex =1;
                      urlStr = buildUrlAddress("xml",et.getText().toString());
                     new Thread(new Runnable() {
                         @Override
@@ -105,6 +109,7 @@ public class Main3Activity extends AppCompatActivity {
             public void onClick(View v) {
 
                 try {final String urlStr;
+                    ex=2;
                     urlStr = buildUrlAddress("json",et.getText().toString());
                     new Thread(new Runnable() {
                         @Override
@@ -121,13 +126,29 @@ public class Main3Activity extends AppCompatActivity {
             }
         });
 
-        btnParse.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                parseXML(sb.toString());
+       btnParse.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+              // if(ex==1) parseXML(tv.getText().toString());
+               new Thread(new Runnable() {
+                   @Override
+                   public void run() {
+                       try{
+                           if(ex==1) {
+                               parseXML(tv.getText().toString());
+                           }
+                           else {
+                               parseJSON(tv.getText().toString());
+                           }
 
-            }
-        });
+                       } catch (JSONException e) {
+                           e.printStackTrace();
+                       }
+                   }
+               });
+           }
+       });
+
 
 
 
@@ -265,13 +286,44 @@ public class Main3Activity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
 
-        }finally {
-            tv.setText(str);
-        }
+        }handler.post(new Runnable() {
+            @Override
+            public void run() {
+                tv.setText(str);
+            }
+        });
 
 
     }
 
+    public static void parseJSON(String jsonText) throws JSONException {
+
+        JSONObject jObj = new JSONObject(jsonText); // JSON파싱 : JSONObject <- String
+
+        JSONArray row = jObj.getJSONArray("stationList");// jason 배열을가져온것
+        // 오브젝트에서 오브젝트뽑을떄
+        System.out.println("row 의 개수: " + row.length());
+
+        System.out.println();
+
+        for (int i = 0; i < row.length(); i++) {
+            JSONObject station = row.getJSONObject(i); // 배열에서 매개변수뽀ㅃㅂ을때
+
+            String statnNm = station.getString("statnNm");
+            String subwayId = station.getString("subwayId");
+            String subwayNm = station.getString("subwayNm");
+
+            str = str+String.format("%d: %5s역  %6s %6s\n", i + 1, statnNm, subwayId, subwayNm);
+
+        }
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                tv.setText(str);
+            }
+        });
+
+    }
 
 
 
