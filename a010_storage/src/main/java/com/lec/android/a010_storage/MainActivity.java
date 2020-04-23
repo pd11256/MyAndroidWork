@@ -41,7 +41,7 @@ import java.io.PrintWriter;
     public class MainActivity extends AppCompatActivity {
 
         EditText et;
-        Button btnAppend, btnRead;
+        Button  btnAppend, btnRead;
         TextView tvResult;
 
         @Override
