@@ -61,9 +61,8 @@ public class Main3Activity extends AppCompatActivity {
     Button btnJSOn;
     Button btnParse;
     EditText et;
-    static TextView tv;
-    StringBuffer sb;
-    static String str= "";
+    TextView tv;
+    String str= "";
     int ex ;
     static Handler handler = new Handler();
 
@@ -129,19 +128,15 @@ public class Main3Activity extends AppCompatActivity {
        btnParse.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-              // if(ex==1) parseXML(tv.getText().toString());
+               if(ex==1)
+                   parseXML(tv.getText().toString());
                new Thread(new Runnable() {
                    @Override
                    public void run() {
                        try{
-                           if(ex==1) {
-                               parseXML(tv.getText().toString());
-                           }
-                           else {
+                           if(ex==2)
                                parseJSON(tv.getText().toString());
-                           }
-
-                       } catch (JSONException e) {
+                      } catch (JSONException e) {
                            e.printStackTrace();
                        }
                    }
@@ -219,9 +214,6 @@ public class Main3Activity extends AppCompatActivity {
 
     }
 
-
-
-
     //4. XML 파싱
     public void parseXML(String xmlText) {
         // XML 파싱
@@ -250,7 +242,6 @@ public class Main3Activity extends AppCompatActivity {
             // DOM 내의 데이터 파싱
             NodeList nList = docElement.getElementsByTagName("row"); // <row>..</row> element 들로 구성된 NodeList 리턴 nList에는
             // 5개가저장된다
-            String str ="";
             for (int i = 0; i < nList.getLength(); i++) {
                 Node node = nList.item(i); // for문 하나하나 <>row>...</row> 출력 이노드안에서 호선 ,역 인원 등 4개 찾아내야함
 
@@ -286,17 +277,13 @@ public class Main3Activity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
 
-        }handler.post(new Runnable() {
-            @Override
-            public void run() {
-                tv.setText(str);
-            }
-        });
-
+        }finally {
+            tv.setText(str);
+        }
 
     }
 
-    public static void parseJSON(String jsonText) throws JSONException {
+    public void parseJSON(String jsonText) throws JSONException {
 
         JSONObject jObj = new JSONObject(jsonText); // JSON파싱 : JSONObject <- String
 
@@ -313,7 +300,7 @@ public class Main3Activity extends AppCompatActivity {
             String subwayId = station.getString("subwayId");
             String subwayNm = station.getString("subwayNm");
 
-            str = str+String.format("%d: %5s역  %6s %6s\n", i + 1, statnNm, subwayId, subwayNm);
+            str = str  +  String.format("%d: %5s역  %6s %6s\n", i + 1, statnNm, subwayId, subwayNm);
 
         }
         handler.post(new Runnable() {
