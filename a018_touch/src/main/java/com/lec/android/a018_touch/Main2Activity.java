@@ -20,7 +20,7 @@ public class Main2Activity extends AppCompatActivity {
 
         ivRobot = findViewById(R.id.ivRobot);
         ll = findViewById(R.id.linearLayout1);
-
+        //연습
         ll.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
